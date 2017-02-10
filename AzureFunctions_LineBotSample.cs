@@ -28,9 +28,9 @@ public static async Task<object> Run(HttpRequestMessage req, TraceWriter log)
     // Send Response to Line Sender
     using (var client = new HttpClient())
     {
-        client.DefaultRequestHeaders.Add("X-Line-ChannelID", "1500592284");
-        client.DefaultRequestHeaders.Add("X-Line-ChannelSecret", "d58b28fbaeb9faf8f829aa4d9da1d73d");
-        client.DefaultRequestHeaders.Add("X-Line-Trusted-User-With-ACL", "kiss-u");
+         client.DefaultRequestHeaders.Add("X-Line-ChannelID", "Channel IDを入力");
+        client.DefaultRequestHeaders.Add("X-Line-ChannelSecret", "Channel Secret を入力");
+        client.DefaultRequestHeaders.Add("X-Line-Trusted-User-With-ACL", "MID を入力");
         var res = await client.PostAsJsonAsync("https://trialbot-api.line.me/v1/events",
             new {
                 to = new[] { result.content.from },
